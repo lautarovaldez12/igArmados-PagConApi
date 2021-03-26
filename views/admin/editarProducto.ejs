@@ -1,0 +1,117 @@
+<%- include("../partials/head")  %> 
+<body>
+    <%- include("../partials/header")  %> 
+    <div class="carga-producto">
+        <div class="container">
+            <div class="content-form row">
+                <form action="/admin/upload/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <section class="product-img col-12">
+                        <figure class="product-detail__images-box--largeImg">
+                            <img src="/images/productos/<%- producto.imagenes[0].name %> " alt="">
+                        </figure>>
+                        <label for="img">Cargar Imagenes</label>
+                        
+                            <input type="file" name="image" id="img" value="<%= producto.image %> "> 
+                    </section>
+        
+                    <section class="product-info col-12">
+                        <div class="box ">
+                        <h2>titulo del producto</h2>
+                        <input type="text" name="title" id="" value="<%= producto.name %>">
+                        <span class="text-danger"><%= (typeof errores != "undefined" && errores.title ? errores.title.msg : null) %></span>
+                        <h2>Precio del producto</h2>
+                        <input type="text" name="price" id="" value="<%= producto.price %>">
+                        <span class="text-danger"><%= (typeof errores != "undefined" && errores.price ? errores.price.msg : null) %></span>
+                        </div>
+    
+                        <div class="box2">
+                        <h2>oferta</h2>      
+                        <input type="text" name="insale" value="<%= producto.insale %>">
+                        <span class="text-danger"><%= (typeof errores != "undefined" && errores.insale ? errores.insale.msg : null) %></span>
+                        <h2>garantia</h2>
+                        <select name="garantia" id="" value="<%= producto.guarantee_id %>">
+                            <<% garantias.forEach(garantia=> { %>
+                                <option  <%= garantia.id == producto.guarantee_id  ? "selected":null %> value="<%= garantia.id%>"> <%= garantia.type%> </option>
+                                <% }) %>
+                                </select>
+                        </div>
+                        </select>
+                    </section>
+        
+                    <article class="product-detail--title">
+                        <h2>detalle</h2>
+                    </article>
+        
+                    <section class="product-detail col-12">
+                        <div class="box3">
+                        <h2>componente</h2>
+                        <select name="component" id="" >
+                            <% componentes.forEach(componente=> { %>
+                                <option <%= componente.id == producto.component_id  ? "selected":null %> value="<%= componente.id%>"><%= componente.name%></option>
+                                <% }) %>
+                                </select>
+                        <h2>marca</h2>
+                        <select name="mark" id="">                                        
+                            <% marcas.forEach(marca=> { %>                      
+                                <option <%= marca.id == producto.mark_id  ? "selected":null %> value="<%= marca.id%>"><%= marca.name%></option>
+                                <% }) %>
+                                </select>                        
+                                <h2 class="mt-3">category</h2>
+                                <select name="category" id="">
+                                    <% categorias.forEach(categoria=> { %>
+                                        <option <%= categoria.id == producto.category_id  ? "selected":null %> value="<%= categoria.id%>"><%= categoria.name%></option>
+                                        <% }) %>
+                                </select>
+                        </div>
+    
+                        <div class="box4">
+                        <h2>modelo</h2>
+                        <input type="text" name="model" value="<%= producto.model %>">
+                        <span class="text-danger"><%= (typeof errores != "undefined" && errores.model ? errores.model.msg : null) %></span>
+                        <h2>en stock</h2>
+                        <select name="stock" id="" value="<%= producto.stock %>">
+                            <option value="1"><p>Si</p></option>
+                            <option value="0"><p>No</p></option>
+                        </div>
+                        </select>
+                    </section>
+        
+                    <article class="product-description--title">
+                        <h2>descripcion</h2>
+                    </article>
+                    <span class="text-danger"><%= (typeof errores != "undefined" && errores.description ? errores.description.msg : null) %></span>
+
+        
+                    <section class="product-description col-12">
+                        <textarea name="description" id="" cols="30" rows="10"><%= producto.description %></textarea>
+                    </section>
+        
+                    <article class="product-feature--title">
+                        <h2>caracteristicas</h2>
+                    </article>
+                    <span class="text-danger"><%= (typeof errores != "undefined" && errores.features ? errores.features.msg : null) %></span>
+
+        
+                    <section class="product-feature col-12">
+                        <textarea name="features" id="" cols="30" rows="10"><%= producto.features %></textarea>
+                    </section>
+                    
+                    <div class="product-botom">
+                        <button type="submit">Enviar</button>
+        
+                    </div>
+                </form>
+        
+    
+            </div>
+            
+        </div>
+
+    </div>
+
+    
+    <%- include("../partials/footer")  %> 
+
+    <%- include("../partials/scriptBS")  %> 
+</body>
+</html>

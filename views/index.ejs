@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+<%- include("partials/head") %>
+  <!-- FIN DE HEAD -->
+
+  <body>
+
+ 
+    <!-- HEADER -->
+    <%- include('partials/header') %>
+      <!-- HEADER -->
+
+      <div class="home">
+
+        <!-- BANNER PRINCIPAL-->
+        <%- include('partials/slider') %>
+          <!--FIN BANNER PRINCIPAL-->
+
+          <!-- IMAGEN DE PROMOCION CON TARJETA -->
+          <section class="banner col-12 col-md-12">
+            <img src="images/Banner.jpg" alt="">
+          </section>
+          <!-- FIN IMAGEN DE PROMOCION CON TARJETA -->
+
+          <!-- PRODUCTOS -->
+          <div class="container-fluid cuerpo mt-5">
+            <div class="row">
+              <div class="titulo col-12">
+                <h2>
+                  destacados
+                </h2>
+                <div class="line">
+                </div>
+              </div>
+              <!-- CAJA QUE ENGLOBA EL PRODUCTO-->
+                <% novedades.forEach(producto => { %>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <section class="product-box">
+                      <a href="/product/<%= producto.id %>">
+                        <figure class="product-box_image">
+                          <img src="/images/productos/<%- producto.imagenes[0].name %> " alt="">
+                        </figure>
+                        <article class="product-box_data">
+                          <h2 class="precio">
+                            $<%=producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                            ".");%><!-- con esta formula, le agrega lo que contenga el ultimo string, en este caso "." en l -->
+                          </h2>
+                          <article>
+                            <button><a href="/product/<%= producto.id %>">detalles</a></button>
+                          </article>
+                          <p> <%= producto.name %> </p>
+                        </article>
+                      </a>
+                    </section>
+                  </div>
+                  <% }) %>	
+            </div>
+          </div>
+
+
+          <!-- FIN DESTACADOS -->
+
+          <!-- NOVEDADES-->
+          <div class="container-fluid cuerpo mt-5">
+            <div class="row">
+              <div class="titulo col-12">
+                <h2>
+                  destacados
+                </h2>
+                <div class="line">
+                </div>
+              </div>
+              <!-- CAJA QUE ENGLOBA EL PRODUCTO-->
+              <% destacados.forEach(producto => { %>
+                <div class="col-12 col-sm-6 col-lg-3">
+                  <section class="product-box">
+                    <a href="/product/<%= producto.id %>">
+                      <figure class="product-box_image">
+                        <img src="/images/productos/<%- producto.imagenes[0].name %> " alt="">
+                      </figure>
+                      <article class="product-box_data">
+                        <h2 class="precio">
+                          $<%=producto.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g,
+                          ".");%><!-- con esta formula, le agrega lo que contenga el ultimo string, en este caso "." en l -->
+                        </h2>
+                        <article>
+                          <button><a href="/product/<%= producto.id %>">detalles</a></button>
+                        </article>
+                        <p> <%= producto.name %> </p>
+                      </article>
+                    </a>
+                  </section>
+                </div>
+                <% }) %>	
+            </div>
+          </div>
+      </div>
+
+
+
+
+      <!--FIN NOVEDADES -->
+      <%- include("partials/what") %>
+      <!-- FOOTER -->
+      <%- include('partials/footer') %>
+
+        <!--FIN FOOTER -->
+
+        <!-- SCRIPTS -->
+        <%- include("partials/scriptBS") %>
+
+          <!-- FIN SCRIPTS -->
+      
+
+  </body>
+
+</html>

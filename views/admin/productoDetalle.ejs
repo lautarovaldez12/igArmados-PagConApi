@@ -1,0 +1,112 @@
+<%- include("../partials/head")  %>  
+    <body>
+        <!-- HEADER -->
+
+        <%- include('../partials/header') %>
+
+            <!-- HEADER -->
+            <div class="detalle-producto">
+                <div class="container">
+                    <main>
+                        <div class="container mt-5">
+                            <h1>Vista de Detalle</h1>
+                            <div class="card" style="width: 45%">
+                                <img src="/images/productos/<%- producto.imagenes[0].name %> " class="card-img-top" alt="..." >
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <%= producto.name %>
+                                    </h5>
+                                    <span class="card-text"><%= producto.price %> - <%= producto.category_id %>  </span>
+                                    <%=  producto.price %> - <%= producto.category_id %>  
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <article class="similar-products__title">
+                        <h2>Productos Similares</h2>
+                    </article>
+                    <div class="similar-products col-12 col-lg-12">
+
+
+                        <div class="similar-products__product-box">
+                            <figure>
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654958-MLA32146296720_092019-O.webp"
+                                    alt="">
+                            </figure>
+
+                            <section>
+                                <p>NOMBRE DEL PRODUCTO</p>
+                                <P>PRECIO DEL PRODUCTO</P>76
+                            </section>
+
+                            <article class="similar-products__product-box--button">
+                                <button>Ver Producto</button>
+                            </article>
+
+                        </div>
+                        <div class="similar-products__product-box">
+                            <figure>
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654958-MLA32146296720_092019-O.webp"
+                                    alt="">
+                            </figure>
+
+                            <section>
+                                <p>NOMBRE DEL PRODUCTO</p>
+                                <P>PRECIO DEL PRODUCTO</P>
+                            </section>
+
+                            <article class="similar-products__product-box--button">
+                                <button>Ver Producto</button>
+                            </article>
+
+                        </div>
+                        <div class="similar-products__product-box desktop-hide">
+                            <figure>
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654958-MLA32146296720_092019-O.webp"
+                                    alt="">
+                            </figure>
+
+                            <section>
+                                <p>NOMBRE DEL PRODUCTO</p>
+                                <P>PRECIO DEL PRODUCTO</P>
+                            </section>
+
+                            <article class="similar-products__product-box--button">
+                                <button>Ver Producto</button>
+                            </article>
+
+                        </div>
+                        <div class="similar-products__product-box desktop-hide">
+                            <figure>
+                                <img src="https://http2.mlstatic.com/D_NQ_NP_654958-MLA32146296720_092019-O.webp"
+                                    alt="">
+                            </figure>
+
+                            <section>
+                                <p>NOMBRE DEL PRODUCTO</p>
+                                <P>PRECIO DEL PRODUCTO</P>
+                            </section>
+
+                            <article class="similar-products__product-box--button">
+                                <button>Ver Producto</button>
+                            </article>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER -->
+
+            <%- include('../partials/footer') %>
+
+                <!-- FOOTER -->
+
+                <%- include("../partials/scriptBS") %>
+    </body>
+
+</html>

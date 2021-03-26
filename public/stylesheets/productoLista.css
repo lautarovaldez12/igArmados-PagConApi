@@ -1,0 +1,139 @@
+:root{
+    --orange:#ff6600;
+    --white:#ffffff;
+    --black:#1f1f1f;
+    --red:#e30909;
+    }
+.productList .fondoLista{
+    background-color: rgba(95,106, 106, 0.5);
+    border-radius: 1px;
+    margin: 30px 14px; 
+}
+.productList .img,.cate{
+    display: none;
+}
+.productList button{
+    color: #fff;
+    width: 40px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+.productList button.delete{
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+.productList button.edit{
+    background-color: #198754;
+    border-color: #198754;
+}
+
+.productList .form-control {
+    margin-bottom: 3px;
+}
+.productList tbody p{
+    justify-content: center;
+    margin-top: 20px;
+    color: white;
+     
+ }
+.productList tr.columna {
+    background: #C02425;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: var(--black)
+} 
+.productList a p:hover {
+color: var(--orange);
+}
+.productList .headerAdmin{
+    display: flex;
+    flex-direction: column;
+    width: 50%; 
+    margin-bottom: 5px;
+}
+.productList .headerAdmin p,a{
+    color: var(--white);
+    margin-bottom: 0;
+}
+.productList .headerAdmin select{
+    border-radius: 5px;
+}
+.productList .headerAdmin a{
+
+    background-color: var(--orange);
+    border-radius: 5px;
+    border-color: var(--orange);
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+    
+
+
+/* ! media query*/
+/* ? Tablet */
+@media(min-width: 768px){
+    .productList .img,.cate{
+        display: inline-block;
+        border: none;
+    }
+
+   
+      tr{
+        border: solid 1px ;
+    }
+    .productList tbody p{
+       justify-content: center;
+       margin-top: 27px;
+       color: white;
+
+
+        
+    }
+   
+    .productList td img{
+        width: 70px;
+        height: 70px;
+    }
+    
+    
+    .productList td.name{
+        width: 300px;
+        height: 70px;
+       
+    }
+    .productList .accion button{
+        margin-top: 4px;
+
+    }
+    .productList .headerAdmin{
+        flex-direction: row;
+        width: 100%;
+        margin-top: 10px
+        ;
+    }
+     
+   .productList .headerAdmin select{
+        height: 25px;
+    }
+    .productList .headerAdmin a{
+        margin: 0px 5px; 
+        text-align: center;
+        font-size: 14px;
+        margin: 3px 11px;
+
+    }
+    
+    .productList .headerAdmin i{
+        margin-top: 5px;
+    }
+    @media(min-width:992px){
+        .productList .fondoLista{
+            margin: 30px 80px; 
+        }
+    
+    }
+   
+}
